@@ -1,0 +1,20 @@
+<p>Pruebas de Auditorias</p>
+<div class="row">
+	<div class="col-xs-3">
+		
+		<p>Operario</p>
+		<input type="text" class="form-control" ng-change="nombreOpe(auditoria.operario)" ng-model="auditoria.operario"></input>
+	    <p>Nombre</p>
+		<input type="text" class="form-control" ng-model="nombre"></input>
+		<p>Referencia Buscador</p>
+		<input type="text" class="form-control"></input>
+		<p>Referencias</p>
+        <select class="form-control" ng-model="formData.refe" ng-change="referenciaUap(formData.refe)"  name="refe" ng-options="refe as refe.ref_externa for refe in referencias" >
+        <option value="">--Elige opcion--</option>
+    	</select>
+    	<p>Turno</p>
+        <input type="text" class="form-control" ng-model="turno"></input>		
+
+	</div>
+
+</div>

@@ -1,0 +1,25 @@
+<h3 class="text-center">TELEFONOS DE INTERES</h3>
+<p>Filtro de búsqueda</p>
+
+<input class="form-control" type="text" ng-model="busqueda"/>
+
+<br>
+<br>
+
+<table class="table table-bordered">
+	  <tr>
+	  	<th>Sección</th>
+	  	<th>Nombre</th>
+	  	<th>Extensión</th>
+	  	
+	  </tr>
+	  <tr ng-repeat="tele in listaTelefonos | filter:busqueda">
+	    <td>{{tele.seccion}}</td>
+	    <td>{{tele.nombre}}</td>
+	    <td>{{tele.ext}}</td>
+
+	  	
+	  </tr>
+
+
+</table>

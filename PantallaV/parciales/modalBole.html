@@ -1,0 +1,33 @@
+
+<div class="modalCheck">
+<form name="boletinModificado" ng-submit="modificarBoletin(boletin)">
+	
+		<h3>Referencia:</h3>
+		<input type="text" class="form-control" ng-model="boletin.bol_refere"></input>
+
+		<h3>Horas:</h3>
+		<input type="text" class="form-control" ng-model="boletin.bol_horas"></input>
+
+		<h3>Piezas:</h3>
+		<input type="text" class="form-control" ng-model="boletin.bol_piezas"></input>
+
+		<h3>Tiempo Óptimo:</h3>
+		<input type="text" class="form-control" ng-model="boletin.bol_tiempo_op"></input>
+
+		<h3>Centro de Coste:</h3>
+		<input type="text" class="form-control" ng-model="boletin.bol_c_coste"></input>
+
+		<h3>Descripción:</h3>
+		<input type="text" class="form-control" ng-model="boletin.bol_cc_descrip"></input>		  
+	<br>
+	<br>
+	<br>	
+	<button type="submit" class="btn btn-info">Guardar y Cerrar</button>  
+  </form>	
+  	<br>
+  	<div class="trampa">
+	 <button ng-click="actualizar(boletin.bol_c_coste)" class="btn btn-success">Aplicar Cambios sin cerrar</button> 
+	</div>	
+</div>
+
+

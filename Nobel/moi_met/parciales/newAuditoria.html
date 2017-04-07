@@ -1,0 +1,133 @@
+<div class="container">
+ <form name="rendimientos" ng-submit="consularRendimiento(formData)">
+   <div style="margin-top: 2%">
+   	 <b style="font-size: 150%;">FECHA:</b>
+   	 <span>{{hoy}}</span>
+   	 <b style="margin-left: 1%;font-size: 150%;">TURNO:</b>
+	    <span>{{turno}}</span>
+      <b style="margin-left: 1%;font-size: 150%;">AUDITOR:</b>
+      <span>{{usuario}}</span>
+      <b style="margin-left: 1%;font-size: 150%;">CONJUNTO?</b>
+      <toggle-switch
+              ng-model="formData.conjunto"
+              on-label="SÍ"
+              off-label="NO">
+       </toggle-switch>
+       <button style="margin-left: 5%" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;&nbsp;ADD</button>
+       <br>
+       <hr>
+       <div style="margin-top:2% ">
+          <b style="margin-left: 1%;font-size: 150%;float: left;">REFERENCIA:</b>
+
+          <input type="text" class="form-control" style="width:10%;float: left;" ng-model="busqueda" placeholder="BUSQUEDA">
+         <select style="width: 20% ;float: left;" class="form-control" ng-model="formData.refe" name="refe" ng-options="refe as refe.ref_externa for refe in listaReferencias |filter:busqueda">
+           <option value="refe.ref_externa">--Elige opcion--</option>
+         </select>
+
+           <b style="margin-left: 1%;font-size: 150%;float: left;">OPERARIOS:</b>
+          <input type="text" class="form-control" style="width:10%;float: left;" ng-model="busquedaOpe" placeholder="BUSQUEDA">
+         <select style="width: 20% ;float: left;" class="form-control" ng-model="formData.codigo" name="codigo" ng-options="ope as ope.total for ope in listaOpe |filter:busquedaOpe" >
+           <option value="ope.codigo">--Elige opcion--</option>
+         </select>
+        <div>
+   </div>
+   <hr>
+   <div style="margin-top: 6%;">
+	  
+      <b style="margin-left: 1%;font-size: 150%;">QPLANT:</b>
+         <toggle-switch
+                 ng-model="formData.qplant"
+                 on-label="SÍ"
+                 off-label="NO">
+          </toggle-switch>
+
+      <b style="margin-left: 1%;font-size: 150%;">ONLINE:</b>
+         <toggle-switch
+                 ng-model="formData.online"
+                 on-label="SÍ"
+                 off-label="NO">
+          </toggle-switch>    
+
+      <b style="margin-left: 1%;font-size: 150%;">OPERARIO:</b>
+         <toggle-switch
+                 ng-model="formData.operario"
+                 on-label="SÍ"
+                 off-label="NO">
+          </toggle-switch> 
+      
+      <b style="margin-left: 1%;font-size: 150%;">VERIFICADOR:</b>
+         <toggle-switch
+                 ng-model="formData.verificador"
+                 on-label="SÍ"
+                 off-label="NO">
+          </toggle-switch>         
+
+   </div>	
+	<hr>
+   <div>
+      <b style="margin-left: 1%;font-size: 150%;float: left;">LIDER:</b>
+      <select style="width: 20% ;float: left;" class="form-control" ng-model="formData.lider" name="codigo" ng-options="lider as lider.total for lider in listaLider" >
+         <option value="lider.codigo">--Elige opcion--</option>
+      </select>
+      <input type="text" class="form-control" style="width:10%;float: left;" ng-model="formData.lider.codigo" placeholder="NUEVO">
+
+
+       <b style="margin-left: 3%;font-size: 150%;float: left;">SUPER:</b>
+      <select style="width: 20% ;float: left;" class="form-control" ng-model="formData.super" name="codigo" ng-options="super as super.total for super in listaSuper" >
+         <option value="super.codigo">--Elige opcion--</option>
+      </select>
+      <input type="text" class="form-control" style="width:10%;float: left;" ng-model="formData.super.codigo" placeholder="NUEVO">
+   
+   </div> 
+<br>
+   <!-- cabecera -->
+   <div style="margin-top:5%; ">
+     <b style="background-color:#ffff00;float: left;margin-left: 2%; ">-____-</b>
+     <b style="background-color:#ffff00;float: left;margin-left: 2.5%;">LAYOUT</b>
+     <b style="background-color:#ffa500;float: left;margin-left: 1%;">METODO</b>
+     <b style="background-color:#ffff00;float: left;margin-left: 1%;">OYL</b>
+     <b style="background-color:#ffff00;float: left;margin-left: 2.5%;">PIEZAS</b>
+     <b style="background-color:#ffff00;float: left;margin-left: 2%;">PC</b>
+     <b style="background-color:#ffff00;float: left;margin-left: 2%;">TRAZA</b>
+     <b style="background-color:#ffff00;float: left;margin-left: 2%;">CHECH</b>
+     <b style="background-color:#ffff00;float: left;margin-left: 2%;">GAMA</b>
+     <b style="background-color:#ffff00;float: left;margin-left: 2%;">MANTE</b>
+     <b style="background-color:#ffff00;float: left;margin-left: 2%;">ID MEDIOS</b>
+     <b style="background-color:#ffff00;float: left;margin-left: 2%;">CA</b>
+   </div>
+
+<br>
+   <!-- existe -->
+   <div>
+     <b style="background-color:#a9a9a9;float: left;margin-left: 2%;">EXISTE</b>
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-model="formData.layOutEx">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-model="formData.metEx">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+   </div>
+ <!-- Operario -->
+   <div>
+     <b style="background-color:#a9a9a9;float: left;margin-left: 2%;">EXISTE</b>
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-model="formData.layOutEx">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-model="formData.metEx">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+     <input type="text" class="form-control" style="width:5%;float: left;margin-left: 2%;" ng-disabled="true">
+   </div>
+</form>
+
+<!--{{listaOpe | json}}-->
+</div>

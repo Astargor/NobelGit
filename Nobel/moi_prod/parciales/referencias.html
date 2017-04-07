@@ -1,0 +1,24 @@
+<h3 class="text-center">REFERENCIAS</h3>
+<p>Filtro de búsqueda</p>
+
+<input class="form-control" type="text" ng-model="busqueda"/>
+
+<br>
+<br>
+
+<table class="table table-bordered">
+	  <tr>
+	  	<th>Interna</th>
+	  	<th>Referencias</th>
+	  	<th>UAP</th>
+	  	<th>Ver</th>
+	  </tr>
+	  <tr ng-repeat="refe in listaReferencias | filter:busqueda">
+	    <td>{{refe.id_ref_codigo_interno}}</td>
+	    <td>{{refe.ref_externa}}</td>
+	    <td>{{refe.UAP}}</td> 
+	    <td><a class="glyphicon glyphicon-search" href="#/referencia/{{refe.ref_externa}}">Ver</a> </td>	
+	  </tr>
+
+
+</table>

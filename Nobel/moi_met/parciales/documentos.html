@@ -1,0 +1,43 @@
+
+<div class="col-xs-1 col-xs-1 desplaIzq">
+
+<strong>Busqueda</strong>
+<input class="form-control" type="text" ng-model="busqueda"/>
+
+<table class="table table-bordered">
+
+	  <tr>
+	  	<th>Referencias</th>
+	  	<th>Escoger</th>
+	  </tr>
+
+	  <tr ng-repeat="refe in listaReferenciasCompleta | filter:busqueda">
+	    <td>{{refe.ref_externa}}</td>
+	    <td><button class="btn btn-primary" ng-click="consultaDoc(refe.ref_externa)"><i class="fa fa-search"></i></button></td>
+	  </tr>
+</table>
+
+</div>
+
+<div class="col-xs-2 col-xs-2 desplaIzq">
+
+<button class="btn-info" ng-click="ficf()">FICF</button>
+<button class="btn-info" ng-click="fica()">FICA</button>
+<button class="btn-info" ng-click="met()">METODO</button>
+<button class="btn btn-primary" ng-click="buscar()">Buscar</button>		
+
+
+</div>
+
+<strong class="text-center">{{titulo}}</strong>
+<div class="col-xs-12 col-xs-6 pdfVisor">
+       <pdf-viewer
+        delegate-handle="my-pdf-container"
+        url="pdfUrl"
+        scale="1.2"
+        show-toolbar="true">
+          
+        </pdf-viewer>
+
+</div>
+

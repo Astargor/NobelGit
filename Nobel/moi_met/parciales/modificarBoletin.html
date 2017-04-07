@@ -1,0 +1,49 @@
+
+<div class="modalColor">
+ <form name="boletinModificado" ng-submit="modificarBoletin(boletin)">
+	<div class="modalColor">
+		<h3>Fecha:</h3>
+		<input type="text" class="form-control" ng-model="boletin.Fecha"></input>
+	</div>	
+	<div class="modalColor">	
+		<h3>Operario:</h3>
+		<input type="text" class="form-control" ng-model="boletin.Operario"></input>
+	</div>
+	<div class="modalColor">	
+		<h3>Referencia:</h3>
+		<input type="text" class="form-control" ng-model="boletin.Referencia"></input>
+	</div>	
+	<div class="modalColor">	
+		<h3>Horas:</h3>
+		<input type="text" class="form-control" ng-model="boletin.Horas"></input>
+	</div>	
+	<div class="modalColor">	
+		<h3>Piezas:</h3>
+		<input type="text" class="form-control" ng-model="boletin.Piezas"></input>
+	</div>
+	<div class="modalColor">	
+		<h3>Tiempo Óptimo:</h3>
+		<input type="text" class="form-control" ng-model="boletin.Tiempo"></input>
+	</div>
+	<div class="modalColor">	
+		<h3>Centro de Coste:</h3>
+		<input type="text" class="form-control" ng-model="boletin.C_Coste"></input>
+	</div>	
+	<div class="modalColor">	
+		<h3>Descripción:</h3>
+		<input type="text" class="form-control" ng-model="boletin.Descripcion"></input>
+	</div>
+	<div class="modalColor">	
+		<h3>Rendimiento:</h3>
+		<input type="text" class="form-control" ng-model="boletin.Rendimentos"></input>
+		
+		<br>
+		<br>
+		<button type="submit" class="btn btn-info">Guardar Cambios Y Cerrar</button>
+	</div>   
+   </form>
+		<br>
+		<button ng-click="ok()" class="btn btn-success">Aplicar Cambios</button> 
+   </div>
+	
+   </div>

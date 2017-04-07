@@ -1,0 +1,29 @@
+<h3 class="text-center">TIEMPOS OPTIMOS</h3>
+<p>Filtro de búsqueda</p>
+
+<input class="form-control" type="text" ng-model="busqueda"/>
+
+<br>
+<br>
+
+<table class="table table-bordered">
+	  <tr>
+	  	<th>Referencia Ext.</th>
+	  	<th>Referencia Int.</th>
+	  	<th>Proceso</th>
+	  	<th>Operarios</th>
+	  	<th>Tiempo Óptimo</th>
+	  	<th>Piezas/Hora</th>
+	  </tr>
+	  <tr ng-repeat="top in tiempo | filter:busqueda">
+	    <td>{{top.t_optimo_externa}}</td>
+	    <td>{{top.t_optimo_interna}}</td>
+	    <td>{{top.tip_proc_descripcion}}</td> 
+	    <td>{{top.t_optimo_operarios}}</td>
+	    <td>{{top.t_optimo_produccion}}</td>
+	    <td>{{top.PH}}</td>
+	    
+	  </tr>
+
+
+</table>

@@ -1,0 +1,68 @@
+<div class="container">
+
+<hr>
+<div class="container">
+<p>{{titleProyect}}</p>
+
+<button class="btn btn-info" style="margin-left: 25px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Actualizar Linea</button>
+<button class="btn btn-info" style="margin-left: 25px;"><i class="fa fa-eraser" aria-hidden="true"></i>&nbsp;&nbsp;Borrar Linea</button>
+</div>
+<hr>
+
+<div class="row">
+
+    <div class="col-xs-1"><p>Nº Elemento</p></div>
+    <div class="col-xs-2"><input class="form-control" type="text" ng-model="numElement"></div>
+    <div class="col-xs-1"><p>Descripción</p></div>
+    <div class="col-xs-2"><input class="form-control" type="text" ng-model="descrip"></div>
+    <div class="col-xs-1"><p>Observaciones</p></div>
+    <div class="col-xs-2"><select name="singleSelect" ng-model="observa">
+          <option value="option-1"></option>
+          <option value="option-2">Inicio de turno, inicio de fabricación, cambios que afecten a la trazabilidad.</option>
+          <option value="option-3">Inicio de turno, inicio de fabricación.</option>
+          <option value="option-4">Inicio de turno, inicio de fabricación, tras 4 horas de trabajo, tras avería.</option>
+          <option value="option-5">Inicio de turno, inicio de fabricación, tras avería.</option>
+        </select>
+     </div>
+
+ </div>
+
+<hr>
+
+<div class="row">
+
+    <div class="col-xs-1"><p>Frecuencia</p></div>
+    <div class="col-xs-1"><input class="form-control" type="text" ng-model="F1"></div>
+    <div class="col-xs-1" style="width: 2%;"><p>/</p></div>
+    <div class="col-xs-1"><input class="form-control" type="text" ng-model="F2"></div>
+    <div class="col-xs-1"><p>Coeficientes</p></div>
+    <div class="col-xs-2"><select name="singleSelect" ng-model="k">
+    <!--<option ng-repeat="option in data.availableOptions" value="{{option.id}}">{{option.name}}</option>-->
+          <option ng-repeat="valor in k" value="valor.numero">{{valor.numero}}</option>
+        </select>
+     </div>
+
+<button class="btn btn-info" ng-click="openModalNewLine()" style="margin-left: 15px;"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;&nbsp;Nueva Linea</button>
+</div>
+<hr>
+<table class="table table-hover">
+<tr>
+   <th style="background-color:#a9a9a9">Nº Elemento</th>
+   <th style="background-color:#a9a9a9">Descripción</th>
+   <th style="background-color:#a9a9a9">Observaciones</th>
+   <th style="background-color:#a9a9a9">F1</th>
+   <th style="background-color:#a9a9a9">F2</th>
+   <th style="background-color:#a9a9a9">K</th>
+</tr>
+	<tr  ng-repeat="value in pizarra" style="padding: 5px 10px;cursor: move;" >
+		<td>{{value.Procesos_n_elemento}}</td>
+		<td>{{value.Procesos_descripcion}}</td>
+		<td>{{value.Procesos_observaciones}}</td>
+		<td>{{value.Procesos_frecuencia1}}</td>
+		<td>{{value.Procesos_frecuencia2}}</td>
+		<td>{{value.coe_total}}</td>
+	</tr>
+</table>
+</div>
+
+<!-- ui-sortable style="padding:5px 10px; cursor:move;"-->

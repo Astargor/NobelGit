@@ -1,0 +1,431 @@
+/*
+-----------------------------------------
+---       VIDEO ANGULAR          --------
+-----------------------------------------
+*/
+.videogular-container {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  overflow: hidden;
+}
+ 
+
+/*
+  ---------------------------------------------
+  --  CSS GENERALES                          --
+  ---------------------------------------------
+  */
+
+  .py2 ,.m0 ,.button-nav-dark{
+
+    padding-left: 1%;
+    padding-right: 1%;
+    border: solid 1px;
+    background-color: #58FAF4;
+    margin-left: 1%;
+    border-radius: 10px 10px 10px 10px;
+
+  }
+
+  .foto{
+    border:solid 1px;
+    width: 10%;
+    height: 20%;
+  }
+  .login{
+    padding: 1%; 
+    font-size: 250%;
+  }
+  .tabla{
+    margin-top: 5%;
+  }
+ .cabecera{
+  margin-top: 1%;
+  background-color: #D8D8D8;
+  padding: 2%;
+  border-radius: 10px 10px 10px 10px;
+
+
+}
+
+.cabeceraLateral{
+  background-color: gray;
+   float: left;
+   width: 60%;
+   margin-left: 2%;
+   border-radius: 10px 10px 10px 10px;
+
+}
+.tall{
+
+  width: 20%;
+}
+.pad{
+  margin: 1%;
+  padding: 2%;
+  width: 25%;
+  color: white;
+  background-color: #1C1C1C;
+} 
+.pad:hover{
+background-color: #EDEDED;
+color:black;
+
+}
+.app-modal-window .modal-dialog {
+  width: 100%;
+  height: 100%;
+}
+  .fondoTabla{
+    background-color: white;
+  }
+  .fondoTablaV{
+    background-color: #01DF01;
+    color:white;
+  }
+  .modalColor{
+    
+   -webkit-border-radius: 10px 10px 10px 10px;
+    -webkit-float: left;
+    -webkit-width: 50%;
+    -webkit-height: 50%;
+    -webkit-background-color: #6E6E6E;
+    -webkit-color:white;
+    border-radius: 10px 10px 10px 10px;
+    float: left;
+    width: 50%;
+    height: 50%;
+    background-color: #6E6E6E;
+    color:white;
+    
+  }
+  .dividido{
+    border-radius: 10px 10px 10px 10px;
+    float: left;
+    width: 30%;
+    height: 50%;
+    background-color: #01DF01;
+    color:white;
+
+  }
+    .dividido2{
+    padding: 5%; 
+    float: left;
+    width: 30%;
+    height: 50%;
+
+  }
+  .textoVerde{
+    color:green;
+    font-size: 150%;
+  }
+  .graficos{
+    float: left;
+  }
+  .graficos3{
+    float: right;
+  }
+  .graficos2{
+    float: left;
+    height: 450%;
+    padding: 1%;
+
+  }
+  .grosorseparador{
+
+    border-width: 10px;
+  }
+  .selectpicker{
+    /*style: 'btn-info';*/
+    font-size: 150%;
+  }
+  .textoal20{
+    font-size: 150%;
+  }
+
+  .probarBorde{
+
+   border: solid 1px;
+
+  }
+  .pdfVisor{
+
+    margin-left: -3%;
+
+  }
+  .probarBorde2{
+
+   border: solid 1px;
+   float: left;
+  }
+
+  .inputLatera{
+   
+   float: left;
+   width: 200px;
+   margin-left: 1%;
+
+  }
+
+  .botonPersonalizado{
+    display: block;
+    padding: 2%;
+    border: solid 2px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #585858;
+    color: white;
+    width: 30%;
+  }
+  .botonPersonalizado:hover{
+   background-color: white;
+    color: black;
+
+  }
+  .cajaPeque{
+    width: 200px;
+   
+  }
+  .cajaPeque2{
+    margin-top: 0;
+    margin-left: 2%;
+    width: 200px;
+    float:left;
+
+  }
+  .cajaPequeOp{
+    width: 100px;
+  }
+/*
+-----------------------------------------------
+--  Color de fondo de las pantallas          --
+-----------------------------------------------
+*/
+.fondoPantalla{
+  background-color: #D8D8D8;
+ 
+}
+/* CSS PARA BORDE CON SOMBRA */
+
+.cabeceraHome,.nobel,.imgPeque,.cabecera{
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.desplaIzq{
+  margin-left: 2%;
+}
+.desplaIzq10{
+  margin-left: 14%;
+}
+.desplaDer{
+  margin-right: 10%;
+}
+
+.boton{
+
+  width: 50%;
+  height: 10%;
+
+}
+/*
+-----------------------------------------------
+---      FIN CSS GENERALES                  ---
+-----------------------------------------------
+*/
+
+.borde{
+  
+  margin-top: 2%;
+}
+body {
+  padding-top: 50px;
+}
+
+.textoblanco{
+  color:white;
+}
+
+.cabeceraHome{
+
+	   text-align: center;
+	   border:solid 1px;
+     border-radius:15px 15px 15px 15px;
+}
+
+.nobel{
+
+-webkit-width: 70%;
+-webkit-height: 70%;
+-webkit-margin-left: 10%;
+-webkit-margin-top: 5%;
+
+width: 70%;
+height: 70%;
+margin-left: 10%;
+margin-top: 5%;
+
+  border-radius:15px 15px 15px 15px;
+}
+
+
+.imgPeque{
+-webkit-width: 100px;
+-webkit-height: 100px;
+  
+width: 100px;
+height: 100px;
+
+}
+.list {
+  list-style: none outside none;
+  margin: 10px 0 30px;
+}
+
+.item {
+  width: 1000px;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border: 2px solid #444;
+  border-radius: 5px;
+  background-color: #EA8A8A;
+
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  cursor: move;
+}
+
+/*
+/*
+-----------------------------------------------
+--CSS para el color de la barra de navegación--
+-----------------------------------------------
+*/
+/*
+.navbar-default {
+  background-color: #3c89e7;
+  border-color: #3ec02b;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #efefef;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #efefef;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #efefef;
+  background-color: #3ec02b;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #efefef;
+  background-color: #3ec02b;
+}
+.navbar-default .navbar-toggle {
+  border-color: #3ec02b;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #3ec02b;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #efefef;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #efefef;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #efefef;
+    background-color: #3ec02b;
+  }
+}
+*/
+
+/* 
+--------------------------------
+---  Barra lateral metodos -----
+--------------------------------
+*/
+
+.barra_lateral{
+  width: 200px;
+  height: 0 auto;
+  background-color: #6E6E6E;
+  color: white;
+  margin-left: -25%;
+}
+
+
+
+/*@media (min-width: 768px) {
+  .navbar-collapse {
+    height: auto;
+    border-top: 0;
+    box-shadow: none;
+    max-height: none;
+    padding-left:0;
+    padding-right:0;
+  }
+  .navbar-collapse.collapse {
+    display: block !important;
+    width: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+  .navbar-collapse.in {
+    overflow-x: visible;
+  }
+
+.navbar
+{
+  max-width:300px;
+  margin-right: 0;
+  margin-left: 0;
+} 
+
+.navbar-nav,
+.navbar-nav > li,
+.navbar-left,
+.navbar-right,
+.navbar-header
+{float:none !important;}
+
+.navbar-right .dropdown-menu {left:0;right:auto;}
+.navbar-collapse .navbar-nav.navbar-right:last-child {
+    margin-right: 0;
+}
+}*/

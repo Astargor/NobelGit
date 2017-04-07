@@ -1,0 +1,45 @@
+
+<br>
+<form name="operairos" ng-submit="anadiralista(anaOpe)">
+<div class="row">
+  
+	  <div class="col-md-1">
+	   <strong>Operário</strong>
+	  </div>
+
+	  <div class="col-md-5 ">
+	   <input type="number" name="ope" class="form-control" ng-model="anaOpe">
+	  </div>
+
+	  <div class="col-md-6 ">
+	   <button class="btn btn-info" type="submit">Añadir Operario a la lista</button>
+	  </div>
+ 
+<div>
+<br>
+  <div class="row">
+
+	  <div class="col-md-2 ">
+	   	<strong>Lista de Operarios</strong>
+	   <table class="table table-bordered">
+		  <tr>
+		  	<th>Código</th>
+		  	<th>Borrar</th>
+		  	
+		  </tr>
+		  <tr ng-repeat="lista in listaOperarios">
+		    <td>{{lista}}</td>
+		    <td><button type="button" class="btn btn-danger" ng-click="borrarOpe($index)"><i class="fa fa-eraser" aria-hidden="true"></i></button></td>	
+		  </tr>
+
+
+</table>
+	  </div>
+ 
+
+  </div>
+  </form>
+
+
+
+

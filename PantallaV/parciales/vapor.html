@@ -1,0 +1,70 @@
+ <div class="container">
+    <div class="row botones">
+ <!-- Boton de Referencia-->
+ 
+     <button class="btn btn-info botonesInteno" ng-click="ocultarRef1('164468096R')">164468096R</button>
+      
+      <dt ng-show="ocultar">
+          <!--Boton de UM -->  
+         <dl class="borde"><button class="btn btn-success botonesInteno" ng-click="ocultarU1('UM-1021')">UM-1021</button>
+              <dt ng-show="ocultar1U">
+              <!-- botones de opcion -->
+                <dl class="borde"><button class="btn btn-warning botonesInteno" ng-click="abrirDoc('164468096R-FICF')">Ficha de Fabricación</button></dl>
+                <dl class="borde"><button class="btn btn-warning botonesInteno" ng-click="abrirDoc('164468096R-FICA')">Ficha de Acondicionamiento</button></dl>
+                <dl class="borde"><button class="btn btn-warning botonesInteno" ng-click="abrirDoc2('164468096R-FIPE-1021')">FIPE</button></dl>
+                <dl class="borde"><button class="btn btn-warning botonesInteno" ng-click="abrirDoc('164468096R-164460402R-164469959R-DSPR-1021')">DSPR</button></dl>
+                <dl class="borde"><button class="btn btn-warning botonesInteno" ng-click="abrirCriterios()">Criterios de Autocontrol</button></dl>
+              </dt>
+         </dl>
+          <!--Boton de metodo -->
+         <dl class="borde"><button class="btn btn-success botonesInteno" ng-click="ocultarMetodoGe()">Método y Tiempo</button>
+           <dt ng-show="ocultarMetodoG">
+              <!-- botones de opcion -->
+                <dl class="borde"><button class="btn btn-warning botonesInteno" ng-click="abrirDocM('164468096R-MET-1')">Página 1</button></dl>
+                <dl class="borde"><button class="btn btn-warning botonesInteno" ng-click="abrirDocM('164468096R-MET-2')">Página 2</button></dl>
+                <dl class="borde"><button class="btn btn-warning botonesInteno" ng-click="abrirDocM('164468096R-MET-3')">Página 3</button></dl>
+                <dl class="borde"><button class="btn btn-warning botonesInteno" ng-click="abrirDocM('164468096R-MET-4')">Página 4</button></dl>
+            </dt>
+          </dl> 
+
+      </dt>
+
+      </div>
+
+      <div>    
+      
+      <button type="button" class="{{estado}}" ng-click="abrirPoka()">{{poka_mensaje}}</button>
+
+      <!-- Declaración averias -->
+
+      <button type="button" class="qplant" ng-click="openModalAverias()">DECLARAR AVERIAS</button>
+
+      <!-- boletin -->
+
+      <button type="button" class="boletines" ng-click="openModalbolten()">DECLARAR BOLETINES</button>
+
+      <!-- CHECK LIST -->
+
+      <button type="button" class="check" ng-click="openModalCheck()">CHECK LIST</button>
+      
+
+
+
+
+
+   <!-- Fin del menu lateral -->
+
+    </div>
+    <div class="pdfVisor3">
+       <pdf-viewer
+        delegate-handle="my-pdf-container"
+        url="pdfUrl"
+        scale="1.3"
+        show-toolbar="false">
+          
+        </pdf-viewer>
+
+    </div>
+
+ </div>
+ 

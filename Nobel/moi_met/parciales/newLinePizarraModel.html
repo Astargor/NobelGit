@@ -1,0 +1,42 @@
+<div class="modalCheck">
+
+ <form name = "newLine" ng-submit="registrarLine(line)">
+	<h1  class = "text-center">NUEVO ELEMENTO</h1>
+	<p><strong>Numero Elemento</strong></p>
+	<input type="number" class="form-control" ng-model="check.numLine" placeholder="Nº Elemento"></input>
+	<BR>
+	<BR>
+	<p><strong>Descripción</strong></p>
+	<input type="text" class="form-control" ng-model="check.descrip" placeholder="Descripción"></input>
+	<BR>
+	<BR>
+	<div>
+    <select class="form-control" ng-model="check.obv">
+      <option value="">---Please select---</option>
+      <option value="option-1">Inicio de turno, inicio de fabricación, cambios que afecten a la trazabilidad.</option>
+      <option value="option-2">Inicio de turno, inicio de fabricación.</option>
+      <option value="option-3">Inicio de turno, inicio de fabricación, tras 4 horas de trabajo, tras avería.</option>
+      <option value="option-4">Inicio de turno, inicio de fabricación, tras avería.</option>
+    </select>
+	</div>
+	<BR>
+	<BR>
+	<div class="row">
+		 <div class="col-xs-2">		 
+				<p><strong>F-1</strong></p>
+				<input type="number" class="form-control cajaPequeOp" ng-model="check.f1" placeholder="Frecuencia 1"></input>
+		 </div>
+		 <div class="col-xs-1">
+				<p><strong>/</strong></p>
+		 </div>
+		 <div class="col-xs-1">
+		 		<p><strong>F-2</strong></p>
+				<input type="number" class="form-control cajaPequeOp" ng-model="check.f2" placeholder="Frecuencia 2"></input>
+		 </div>
+	</div>
+	<BR>
+	<BR>
+	<button type="submit" class="btn btn-info">REGISTRAR</button>
+ </form>	
+</div>
+

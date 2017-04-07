@@ -1,0 +1,59 @@
+<h1>Codigo de identificación del Tiempo Óptimo: {{codigoExterno}}</h1>
+
+<div class="container">
+	 <div class="row">
+       <form name = "tiempoOptimo" ng-submit="registrarCambio(tim)">
+        <br>
+	        <div class="col-xs-3">
+	               <strong class="textoal20">Referencia Externa: {{tiempo.t_optimo_externa}}</strong>
+
+	        </div>
+
+	        <div class="col-xs-3">
+	               <strong class="textoal20">Referencia Interna: {{tiempo.t_optimo_interna}}</strong>
+
+	        </div>
+
+	        <div class="col-xs-3">
+	        <strong class="textoal20">Activo?</strong>
+
+	        <toggle-switch
+              ng-model="tim.switchStatus"
+              on-label="SÍ"
+              off-label="NO">
+            </toggle-switch>
+
+          </div>
+
+          
+
+          <div class="col-xs-3">
+
+         
+
+           <strong>Tiempo Óptimo</strong>
+           <input type="text" name="tiempoOp" ng-model="tim.tiemOp" class="form-control cajaPeque">           
+
+          </div>
+
+          <div class="col-xs-3">
+             <strong class="textoal20">Calculo Piezas/Hora: {{tim.piezasHoras}}</strong>
+          </div>
+
+           
+          
+          <div class="col-xs-3">
+
+          
+
+          <button type="submit" class="btn btn-info">REGISTRAR CAMBIOS</button>
+
+          </div>
+
+
+       
+	      
+       </form>
+
+     </div>
+</div>

@@ -1,0 +1,69 @@
+<div class="modal-body">
+<h1 class="text-center">Revision de Boletines</h1>
+<strong>Escoge Operario</strong>
+<label class="label label-primary" ng-show="cargando">Cargando Datos Espere......</label>
+<div class="container">
+  
+  <select class="graficos2" multiple ng-model="SelecOper" name="oper" ng-options="oper as oper.Operario for oper in operario" >
+       
+  </select>
+  &nbsp;&nbsp;&nbsp;
+  <button class="btn btn-info" ng-click="traerBole()">Cargar Boletin Del Operario Escogido</button>
+  &nbsp;&nbsp;&nbsp;
+  <button type="button" class="btn btn-success" ng-click="validarBoletin()">Boletín Correcto</button>&nbsp;&nbsp;&nbsp;<strong class="textoVerde animated {{animacion}}">{{mensaje}}</strong>
+  
+  <br>
+  <br>
+  </div>
+  <!--{{boletin | json}}-->
+  <div class="container">
+  <br>
+  <strong>Cantidad De Boletines : {{cantidadBole.cantidad}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Nombre: {{nombre}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>TOTAL HORAS</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{totalHoras()}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>CANTIDAD DE BOLETINES : {{cantidadBoletines}}</strong>
+  <br>
+  <table class="table table-striped">
+
+  	  <tr>
+  	    <th>ID</th>
+  	    <th>Fecha</th>
+  	    <th>Operario</th>
+  	    <th>Horas</th>
+  	    <th>C_Coste</th>
+  	    <th>Descripción</th>
+  	    <th>Piezas</th>
+  	    <th>Tiempo</th>
+  	    <th>Referencia</th>
+  	    <th>Rendimiento</th>
+  	    <th>Validado Por</th>
+        <th>Modificar</th>
+        <th>Devolver</th>
+
+  	  </tr>
+  	  <tr ng-repeat="bole in boletin"> 
+  	    <td>{{bole.ID}}</td>
+  	    <td>{{bole.Fecha}}</td>
+  	    <td>{{bole.Operario}}</td>
+  	    <td>{{bole.Horas}}</td>
+  	    <td>{{bole.C_Coste}}</td>
+  	    <td>{{bole.Descripcion}}</td>
+  	    <td>{{bole.Piezas}}</td>
+  	    <td>{{bole.Tiempo}}</td>
+  	    <td>{{bole.Referencia}}</td>
+        <td ng-if="bole.Rendimentos > 105" style="background-color: #DF0101;color: white;">{{bole.Rendimentos}}</td>
+  	    <td ng-if="bole.Rendimentos >= 96 == bole.Rendimentos <= 105" style="background-color: #A9F5A9;">{{bole.Rendimentos}}</td>
+        <td ng-if="bole.Rendimentos >= 96 == bole.Rendimentos <= 95" style="background-color: yellow;">{{bole.Rendimentos}}</td>
+        <td ng-if="bole.Rendimentos <= 95 == bole.Rendimentos >= 84" style="background-color: #DF0101;color: white;">{{bole.Rendimentos}}</td>
+        <td ng-if="bole.Rendimentos <= 84 == bole.Rendimentos >= 71" style="background-color: #848484;">{{bole.Rendimentos}}</td>
+        <td ng-if="bole.Rendimentos < 71 == bole.Rendimentos >= 1" style="background-color: #151515;color: white;">{{bole.Rendimentos}}</td>
+        <td ng-if="bole.Rendimentos == 0" style="background-color: white;">{{bole.Rendimentos}}</td>
+  	    <td>{{bole.Validado_por}}</td>
+        <td> <button type="button" class="btn btn-danger" ng-click="open(bole.ID)"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Modificar</button></td>
+        <td> <button type="button" class="btn btn-warning" ng-click="devolver(bole.Operario,bole.ID,bole.Fecha)"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Devolver</button></td>
+  	  </tr>
+
+
+  </table>
+
+
+
+</div>
+</div>

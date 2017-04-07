@@ -1,0 +1,28 @@
+<h2>Trabajadores</h2>
+<br>
+<input class="form-control" type="text" ng-model="busqueda"/>
+
+<br>
+<br>
+
+<table class="table table-condensed">
+	  <tr>
+	  	<th>Codigo</th>
+	  	<th>Nombre</th>
+	  	<th>Apellido</th>
+	  	<th>Apellido</th>
+	  	<th>UAP</th>
+	  	<th>Activo</th>
+	  </tr>
+	  <tr ng-repeat="ope in listatrabajadores | filter:busqueda">
+	    <td>{{ope.codigo}}</td>
+	    <td>{{ope.Nombre}}</td>
+	    <td>{{ope.Apellido1}}</td>
+	    <td>{{ope.Apellido2}}</td>
+	    <td>{{ope.UAP}}</td>
+	    <td>{{ope.Activo}}</td>
+	  	
+	  </tr>
+
+
+</table>

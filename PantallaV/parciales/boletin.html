@@ -1,0 +1,97 @@
+<h1 class="text-center cabeceraHome">Boletín</h1>
+
+ <div class="container">
+ <br>
+    <label class="label label-primary login" ng-show="cargando">Cargando Boletín Espere..........</label>
+
+	<form name="bole" ng-submit="insertarBole(boletin)">
+
+		<hr>
+		<!-- fecha -->
+		<div class="col-xs-2">
+			<h1 class="calendario"><p>FECHA</p>{{hoy2}}</h1>
+	    </div>
+	    <!-- horas trabajadas -->
+	    <div class="col-xs-2">
+		<h3 class="text-center">Horas</h3>
+			<input type="text" required="required" class="form-control" ng-model="boletin.horas"></input>
+	    </div>
+	    <!-- centro de coste -->
+	    <div class="col-xs-3">
+	    <h3 class="text-center">Centro de coste</h3>
+			<select class = "elselect" name="repeatSelect" id="repeatSelect" ng-model="data.repeatSelect" ng-change="cambiarCC(data.repeatSelect)">
+		     <option ng-repeat="option in centroCoste" value="{{option.coste}}">{{option.coste}} {{option.descripcion}}</option>
+		    </select> 
+	    </div> 
+        <br>
+        <br>
+	    <div class="desplaIzq2">
+	    <br>
+        <br>
+        <br>
+		<h3 >{{refInt}}</h3>
+			<button ng-click="modalRef()" class="btn btn-info">Cambiar Referencia</button>
+	    </div>
+
+	    <div class="desplaIzq3">
+		    <h3 class="text-center">Tiempo Óptimo</h3>
+			<h3 class="text-center">{{tiempoOP}}</h3>	
+	    </div>
+
+	    <div class="desplaIzq4">
+		    <h3 class="text-center">Cantidad Operarios</h3>
+			<h3 class="text-center">{{cantOpe}}</h3>	
+	    </div>
+
+	    <div class="desplaIzq5">
+		    <h3 class="text-center">Piezas / Hora</h3>
+			<h3 class="text-center">{{piezasHoras}}</h3>	
+	    </div>
+
+	    <div class="desplaIzq6">
+		<h3 class="text-center">Piezas Fabricadas</h3>
+			<input type="number" required="required" class="form-control" ng-model="boletin.piezas" placeholder="Piezas Fabricadas"></input>
+	    </div>
+        <br>
+	    <div class="botonCentrado">
+			<button class="btn btn-success" type="submit">REGISTRAR LINEA</button>
+	    </div>
+
+
+
+	</form>       
+ </div>	
+ <br>
+ <hr>
+
+	<table class="table table-striped">
+	    <tr>
+			<th>HORAS</th>
+			<th>C COSTE</th>
+		  	<th>DESCRIPCIÓN</th>
+		  	<th>REFERENCIA</th>
+		  	<th>TIEMPO ÓPTIMO</th>
+		  	<th>PIEZAS</th>
+		  	<th>MODIFICAR</th>
+		  	<th>ELIMINAR</th>
+        </tr>
+        <tr>
+            <tr ng-repeat="bole in boletinOpe">
+		    <td>{{bole.bol_horas}}</td>
+		    <td>{{bole.bol_c_coste}}</td>
+		    <td>{{bole.bol_cc_descrip}}</td>
+		    <td>{{bole.bol_refere}}</td>
+		    <td>{{bole.bol_tiempo_op}}</td>
+		    <td>{{bole.bol_piezas}}</td>
+		    <td><button class="btn btn-info" ng-click="modifiBole(bole.id_boletines)">MODIFICAR</button></td>
+		    <td><button class="btn btn-danger" ng-click="eliminarBole(bole.id_boletines)">ELIMINAR</button></td>
+		</tr>
+        
+	</table>
+
+	<h3>TOTAL TIEMPO</h3><h3>{{totalHoras()}}</h3>
+
+
+
+
+

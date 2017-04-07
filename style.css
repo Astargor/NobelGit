@@ -1,0 +1,59 @@
+body{
+  border: solid 1px;
+	background: url("http://lorempixel.com/1280/800/transport/") 50% fixed;  
+	background-size: cover;
+	height: 100vh;
+
+ -webkit-border: solid 1px;
+ -webkit-background: url("http://lorempixel.com/1280/800/transport/") 50% fixed;  
+ -webkit-background-size: cover;
+ -webkit-height: 100vh;
+	
+}
+.botonUM{
+
+	background-color: #3ADF00;
+	width: 20%;
+	height: 20%;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius:15px 15px 15px 15px;
+  margin-top: 15%;
+  margin-left: 20%;
+  float: left;
+  text-align: center;
+  font-size: 255%;
+
+
+
+}
+.botonWeb{
+
+
+	background-color: #2ECCFA;
+width: 20%;
+	height: 20%;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius:15px 15px 15px 15px;
+  margin-top: 15%;
+  margin-left: 20%;
+  float: left;
+  text-align: center;
+  font-size: 255%;
+
+}
+.botonUM:hover{
+
+	background-color: white;
+	font-style: oblique;
+	cursor: pointer;
+
+}
+.botonWeb:hover{
+	background-color: white;
+	font-style: oblique;
+	cursor: pointer;
+}

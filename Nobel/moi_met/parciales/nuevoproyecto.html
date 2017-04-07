@@ -1,0 +1,430 @@
+
+<strong>NO = No esta creado , Sí = Creado , EN CURSO = Todavía en desarrollo , NP = No Procede para esta referencia</strong>
+<div class="col-xs-16">
+<br>
+<br>
+
+<button class="btn btn-info" style=" margin-left:2%;" ng-click="recuperarRef()">{{frase}}</button>
+
+<strong style="margin-left:3%;">{{actualizacion}}</strong>
+
+<select ng-change="traerProyecto(listaRef)" ng-model="listaRef" ng-show="ocultar" class="form-control" name="ref" ng-options="ref as ref.proy_referencia_externa for ref in listaReferencias" >
+        <option value="">--Elige opción--</option>
+</select>
+
+</div>
+
+
+<div class="col-xs-2">
+<br>
+  Referencia Externa<input type="text" class="form-control" ng-model="refExt" name="refExt">
+</div>
+
+<div class="col-xs-2">
+<br>
+  Referencia Interna<input type="text" class="form-control" ng-model="refInt" name="refInt">
+</div>
+<div ng-show="ocultaruap" class="col-xs-2">
+<br>
+UAP
+  <select ng-model="UAP"  class="form-control"  name="UAP" ng-options="UAP as UAP.UAP for UAP in listaUAP" >
+        <option value="">--Elige opción--</option>
+</select>
+</div>
+<div ng-show="ocultaruap2" class="col-xs-2">
+<br>
+UAP<input type="text" class="form-control" ng-model="uapre" name="uapre">
+  
+</div>
+
+<div class="col-xs-12">
+<hr class="grosorseparador">
+<strong>CARPETA FÍSICA</strong>
+
+<br>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CAJONERA ENSAMBLADO</h5>
+    <label class="{{claserojaCajonera}}" ng-click="confirmarCajonera()" ng-model="radioModelCajonera" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverdeCajonera}}" ng-click="confirmarCajonera()" ng-model="radioModelCajonera" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarillaCajonera}}" ng-click="confirmarCajonera()" ng-model="radioModelCajonera" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegroCajonera}}" ng-click="confirmarCajonera()" ng-model="radioModelCajonera" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="CajoneraComentOcultar" ng-model="CajoneraComent" name="CajoneraComent"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CAJONERA VERIFICACION</h5>
+    <label class="{{claserojaCajonera2}}" ng-click="confirmarCajonera2()" ng-model="radioModelCajonera2" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverdeCajonera2}}" ng-click="confirmarCajonera2()" ng-model="radioModelCajonera2" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarillaCajonera2}}" ng-click="confirmarCajonera2()" ng-model="radioModelCajonera2" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegroCajonera2}}" ng-click="confirmarCajonera2()" ng-model="radioModelCajonera2" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50"  class="form-control" ng-show="CajoneraComentOcultar2" ng-model="CajoneraComent2" name="CajoneraComent2"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CAJONERA TUBO CONFORMADO</h5>
+    <label class="{{claseroja25}}" ng-click="confirmar25()" ng-model="radioModel25" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde25}}" ng-click="confirmar25()" ng-model="radioModel25" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla25}}" ng-click="confirmar25()" ng-model="radioModel25" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro25}}" ng-click="confirmar25()" ng-model="radioModel25" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar25" ng-model="Coment25" name="Coment25"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CARPETA ENSAMBLADO</h5>
+    <label class="{{claseroja3}}" ng-click="confirmar3()" ng-model="radioModel3" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde3}}" ng-click="confirmar3()" ng-model="radioModel3" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla3}}" ng-click="confirmar3()" ng-model="radioModel3" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro3}}" ng-click="confirmar3()" ng-model="radioModel3" uib-btn-radio="4" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar3" ng-model="Coment3" name="Coment3"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CARPETA VERIFICACION</h5>
+   <label class="{{claseroja4}}" ng-click="confirmar4()" ng-model="radioModel4" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde4}}" ng-click="confirmar4()" ng-model="radioModel4" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla4}}" ng-click="confirmar4()" ng-model="radioModel4" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+     <label class="{{clasenegro4}}" ng-click="confirmar4()" ng-model="radioModel4" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar4" ng-model="Coment4" name="Coment4"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>FICF</h5>
+    <label class="{{claserojaFICF}}" ng-click="confirmarFICF()" ng-model="radioModel" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverdeFICF}}" ng-click="confirmarFICF()" ng-model="radioModel" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarillaFICF}}" ng-click="confirmarFICF()" ng-model="radioModel" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+     <label class="{{clasenegroFICF}}" ng-click="confirmarFICF()" ng-model="radioModel" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="FICFComentOcultar" ng-model="FICFComent" name="FICFComent"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>FICA</h5>
+    <label class="{{claserojaFICA}}" ng-click="confirmarFICA()" ng-model="radioModelFICA" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverdeFICA}}" ng-click="confirmarFICA()" ng-model="radioModelFICA" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarillaFICA}}" ng-click="confirmarFICA()" ng-model="radioModelFICA" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegroFICA}}" ng-click="confirmarFICA()" ng-model="radioModelFICA" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+   <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="FICAComentOcultar" ng-model="FICAComent" name="FICAComent"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>LAYOUT</h5>
+    <label class="{{claserojaLAYOUT}}" ng-click="confirmarLAYOUT()" ng-model="radioModelLAYOUT" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverdeLAYOUT}}" ng-click="confirmarLAYOUT()" ng-model="radioModelLAYOUT" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarillaLAYOUT}}" ng-click="confirmarLAYOUT()" ng-model="radioModelLAYOUT" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegroLAYOUT}}" ng-click="confirmarLAYOUT()" ng-model="radioModelLAYOUT" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+   <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="LAYOUTComentOcultar" ng-model="LAYOUTComent" name="LAYOUTComent"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>METODO Y TIEMPO</h5>
+    <label class="{{claserojaMYT}}" ng-click="confirmarMYT()" ng-model="radioModelMYT" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverdeMYT}}" ng-click="confirmarMYT()" ng-model="radioModelMYT" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarillaMYT}}" ng-click="confirmarMYT()" ng-model="radioModelMYT" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegroMYT}}" ng-click="confirmarMYT()" ng-model="radioModelMYT" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="MYTComentOcultar" ng-model="MYTComent" name="MYTComent"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5><strong>PDF´S CREADOS</strong></h5>
+    <label  class="{{verdePdfFicf}}" ng-click="confirmarPdfFicf()" ng-model="radioModelPdfFicf" uib-btn-radio="1" uncheckable>FICF</label>
+    <label  class="{{verdePdfFica}}" ng-click="confirmarPdfFica()" ng-model="radioModelPdfFica" uib-btn-radio="1" uncheckable>FICA</label>
+    <label  class="{{verdePdfMyt}}"  ng-click="confirmarPdfMyt()"  ng-model="radioModelPdfMyt" uib-btn-radio="1" uncheckable>MYT</label>
+    
+</div>
+
+
+
+</div>
+<!-- PANEL VERDE -->
+<div class="col-xs-12">
+<hr class="grosorseparador">
+<strong>PANEL VERDE</strong>
+<br>
+
+<div class="btn-group col-xs-3">
+<h5>FIPE</h5>
+    <label class="{{claserojaFIPE}}" ng-click="confirmarFIPE()" ng-model="radioModelFIPE" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverdeFIPE}}" ng-click="confirmarFIPE()" ng-model="radioModelFIPE" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarillaFIPE}}" ng-click="confirmarFIPE()" ng-model="radioModelFIPE" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegroFIPE}}" ng-click="confirmarFIPE()" ng-model="radioModelFIPE" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="FIPEComentOcultar" ng-model="FIPEComent" name="FIPEComent"></textarea>
+</div>
+<div class="btn-group col-xs-3">
+<h5>DSPR</h5>
+    <label class="{{claserojaDSPR}}" ng-click="confirmarDSPR()" ng-model="radioModelDSPR" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverdeDSPR}}" ng-click="confirmarDSPR()" ng-model="radioModelDSPR" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarillaDSPR}}" ng-click="confirmarDSPR()" ng-model="radioModelDSPR" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegroDSPR}}" ng-click="confirmarDSPR()" ng-model="radioModelDSPR" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="DSPRComentOcultar" ng-model="DSPRComent" name="DSPRComent"></textarea>
+</div>
+
+</div>
+<!--Medios -->
+<div class="col-xs-12">
+<hr class="grosorseparador">
+<strong>IDENTIFICAR MEDIOS</strong>
+<br>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CUBETAS</h5>
+   <label class="{{claseroja5}}" ng-click="confirmar5()" ng-model="radioModel5" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde5}}" ng-click="confirmar5()" ng-model="radioModel5" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla5}}" ng-click="confirmar5()" ng-model="radioModel5" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro5}}" ng-click="confirmar5()" ng-model="radioModel5" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar5" ng-model="Coment5" name="Coment5"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>BACS ACCESORIOS</h5>
+   <label class="{{claseroja6}}" ng-click="confirmar6()" ng-model="radioModel6" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde6}}" ng-click="confirmar6()" ng-model="radioModel6" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla6}}" ng-click="confirmar6()" ng-model="radioModel6" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro6}}" ng-click="confirmar6()" ng-model="radioModel6" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar6" ng-model="Coment6" name="Coment6"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>ETI. ESTANTERIA</h5>
+   <label class="{{claseroja7}}" ng-click="confirmar7()" ng-model="radioModel7" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde7}}" ng-click="confirmar7()" ng-model="radioModel7" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla7}}" ng-click="confirmar7()" ng-model="radioModel7" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro7}}" ng-click="confirmar7()" ng-model="radioModel7" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar7" ng-model="Coment7" name="Coment7"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>TUBERAS</h5>
+   <label class="{{claseroja8}}" ng-click="confirmar8()" ng-model="radioModel8" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde8}}" ng-click="confirmar8()" ng-model="radioModel8" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla8}}" ng-click="confirmar8()" ng-model="radioModel8" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro8}}" ng-click="confirmar8()" ng-model="radioModel8" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar8" ng-model="Coment8" name="Coment8"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CCBB MAQUETA ESTANQUEIDAD</h5>
+   <label class="{{claseroja9}}" ng-click="confirmar9()" ng-model="radioModel9" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde9}}" ng-click="confirmar9()" ng-model="radioModel9" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla9}}" ng-click="confirmar9()" ng-model="radioModel9" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro9}}" ng-click="confirmar9()" ng-model="radioModel9" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar9" ng-model="Coment9" name="Coment9"></textarea>
+</div>
+
+</div>
+<!--Kanban -->
+<div class="col-xs-12">
+<hr class="grosorseparador">
+<strong>KANBAN</strong>
+<br>
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>BACS KANBAN</h5>
+   <label class="{{claseroja10}}" ng-click="confirmar10()" ng-model="radioModel10" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde10}}" ng-click="confirmar10()" ng-model="radioModel10" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla10}}" ng-click="confirmar10()" ng-model="radioModel10" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro10}}" ng-click="confirmar10()" ng-model="radioModel10" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar10" ng-model="Coment10" name="Coment10"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>ETI. FRONTAL</h5>
+   <label class="{{claseroja11}}" ng-click="confirmar11()" ng-model="radioModel11" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde11}}" ng-click="confirmar11()" ng-model="radioModel11" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla11}}" ng-click="confirmar11()" ng-model="radioModel11" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro11}}" ng-click="confirmar11()" ng-model="radioModel11" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar11" ng-model="Coment11" name="Coment11"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>ETI. LATERAL</h5>
+   <label class="{{claseroja12}}" ng-click="confirmar12()" ng-model="radioModel12" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde12}}" ng-click="confirmar12()" ng-model="radioModel12" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla12}}" ng-click="confirmar12()" ng-model="radioModel12" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro12}}" ng-click="confirmar12()" ng-model="radioModel12" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar12" ng-model="Coment12" name="Coment12"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>ETI. KANBAN</h5>
+   <label class="{{claseroja13}}" ng-click="confirmar13()" ng-model="radioModel13" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde13}}" ng-click="confirmar13()" ng-model="radioModel13" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla13}}" ng-click="confirmar13()" ng-model="radioModel13" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro13}}" ng-click="confirmar13()" ng-model="radioModel13" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar13" ng-model="Coment13" name="Coment13"></textarea>
+</div>
+
+
+</div>
+
+
+<!-- CODIGOS DE BARRAS -->
+
+<div class="col-xs-12">
+<hr class="grosorseparador">
+<strong>CÓDIGOS DE BARRAS</strong>
+<br>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CCBB DE MATERIA PRIMA CONFORMADO</h5>
+   <label class="{{claseroja14}}" ng-click="confirmar14()" ng-model="radioModel14" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde14}}" ng-click="confirmar14()" ng-model="radioModel14" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla14}}" ng-click="confirmar14()" ng-model="radioModel14" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro14}}" ng-click="confirmar14()" ng-model="radioModel14" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar14" ng-model="Coment14" name="Coment14"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CCBB TRAZABILIDADES UAPS</h5>
+   <label class="{{claseroja15}}" ng-click="confirmar15()" ng-model="radioModel15" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde15}}" ng-click="confirmar15()" ng-model="radioModel15" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla15}}" ng-click="confirmar15()" ng-model="radioModel15" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro15}}" ng-click="confirmar15()" ng-model="radioModel15" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar15" ng-model="Coment15" name="Coment15"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CCBB LISTADO BOLETÍN</h5>
+   <label class="{{claseroja16}}" ng-click="confirmar16()" ng-model="radioModel16" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde16}}" ng-click="confirmar16()" ng-model="radioModel16" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla16}}" ng-click="confirmar16()" ng-model="radioModel16" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro16}}" ng-click="confirmar16()" ng-model="radioModel16" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+   <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar16" ng-model="Coment16" name="Coment16"></textarea>
+</div>
+
+
+
+</div>
+
+<!-- VIDEOS -->
+
+<div class="col-xs-12">
+<hr class="grosorseparador">
+<strong>VIDEOS</strong>
+<br>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>VIDEO ENSAMBLADO</h5>
+   <label class="{{claseroja26}}" ng-click="confirmar26()" ng-model="radioModel26" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde26}}" ng-click="confirmar26()" ng-model="radioModel26" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla26}}" ng-click="confirmar26()" ng-model="radioModel26" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro26}}" ng-click="confirmar26()" ng-model="radioModel26" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar26" ng-model="Coment18" name="Coment26"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>VIDEO VERIFICACIÓN </h5>
+   <label class="{{claseroja27}}" ng-click="confirmar27()" ng-model="radioModel27" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde27}}" ng-click="confirmar27()" ng-model="radioModel27" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla27}}" ng-click="confirmar27()" ng-model="radioModel27" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro27}}" ng-click="confirmar27()" ng-model="radioModel27" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar27" ng-model="Coment19" name="Coment27"></textarea>
+</div>
+
+<div class="btn-group col-xs-4" style="margin-top:1%;">
+<h5>OTROS</h5>
+   <label class="{{claseroja28}}" ng-click="confirmar28()" ng-model="radioModel28" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde28}}" ng-click="confirmar28()" ng-model="radioModel28" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla28}}" ng-click="confirmar28()" ng-model="radioModel28" uib-btn-radio="2" uncheckable="uncheckable">COMENTARIO</label>
+    <label class="{{clasenegro28}}" ng-click="confirmar28()" ng-model="radioModel28" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar20" ng-model="Coment28" name="Coment28"></textarea>
+</div>
+
+</div>
+
+
+<!-- MAPICS -->
+
+<div class="col-xs-12">
+<hr class="grosorseparador">
+<strong>MAPICS</strong>
+<br>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CREAR MP Y ALMACENES</h5>
+   <label class="{{claseroja18}}" ng-click="confirmar18()" ng-model="radioModel18" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde18}}" ng-click="confirmar18()" ng-model="radioModel18" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla18}}" ng-click="confirmar18()" ng-model="radioModel18" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro18}}" ng-click="confirmar18()" ng-model="radioModel18" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar18" ng-model="Coment18" name="Coment18"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CREAR SE Y ALMACENES </h5>
+   <label class="{{claseroja19}}" ng-click="confirmar19()" ng-model="radioModel19" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde19}}" ng-click="confirmar19()" ng-model="radioModel19" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla19}}" ng-click="confirmar19()" ng-model="radioModel19" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro19}}" ng-click="confirmar19()" ng-model="radioModel19" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar19" ng-model="Coment19" name="Coment19"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CREAR PA Y ALMACENES</h5>
+   <label class="{{claseroja20}}" ng-click="confirmar20()" ng-model="radioModel20" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde20}}" ng-click="confirmar20()" ng-model="radioModel20" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla20}}" ng-click="confirmar20()" ng-model="radioModel20" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro20}}" ng-click="confirmar20()" ng-model="radioModel20" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar20" ng-model="Coment20" name="Coment20"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>CREAR PROCESOS</h5>
+   <label class="{{claseroja21}}" ng-click="confirmar21()" ng-model="radioModel21" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde21}}" ng-click="confirmar21()" ng-model="radioModel21" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla21}}" ng-click="confirmar21()" ng-model="radioModel21" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro21}}" ng-click="confirmar21()" ng-model="radioModel21" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar21" ng-model="Coment21" name="Coment21"></textarea>
+</div>
+
+</div>
+
+<!-- BBDD -->
+
+<div class="col-xs-12">
+<hr class="grosorseparador">
+<strong>BASE DE DATOS</strong>
+<br>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>TIEMPO OPTIMO</h5>
+   <label class="{{claseroja22}}" ng-click="confirmar22()" ng-model="radioModel22" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde22}}" ng-click="confirmar22()" ng-model="radioModel22" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla22}}" ng-click="confirmar22()" ng-model="radioModel22" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro22}}" ng-click="confirmar22()" ng-model="radioModel22" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <button class="btn btn-info" ng-click="abrirTiempo()">CREAR EN BBDD</button>
+   <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar22" ng-model="Coment22" name="Coment22"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>BOMBO </h5>
+   <label class="{{claseroja23}}" ng-click="confirmar23()" ng-model="radioModel23" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde23}}" ng-click="confirmar23()" ng-model="radioModel23" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla23}}" ng-click="confirmar23()" ng-model="radioModel23" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro23}}" ng-click="confirmar23()" ng-model="radioModel23" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <button class="btn btn-info" >CREAR EN BBDD</button>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar23" ng-model="Coment23" name="Coment23"></textarea>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:1%;">
+<h5>UM</h5>
+   <label class="{{claseroja24}}" ng-click="confirmar24()" ng-model="radioModel24" uib-btn-radio="0" uncheckable>NO</label>
+    <label class="{{claseverde24}}" ng-click="confirmar24()" ng-model="radioModel24" uib-btn-radio="1" uncheckable>SI</label>
+    <label class="{{claseamarilla24}}" ng-click="confirmar24()" ng-model="radioModel24" uib-btn-radio="2" uncheckable="uncheckable">EN CURSO</label>
+    <label class="{{clasenegro24}}" ng-click="confirmar24()" ng-model="radioModel24" uib-btn-radio="3" uncheckable="uncheckable">NP</label>
+    <button class="btn btn-info" >CREAR EN BBDD</button>
+    <textarea type="text-area" rows="2" cols="50" class="form-control" ng-show="ComentOcultar24" ng-model="Coment24" name="Coment24"></textarea>
+</div>
+
+
+</div>
+
+<!-- botones finales -->
+<div class="col-xs-12">
+<br>
+<br>
+<button ng-show="botonNuevo" ng-click="creacionProyecto()" class="btn btn-info">CREAR PROYECTO NUEVO</button>
+<button ng-show="botonActualiza" ng-click="proyectoActualizar(uapre,refExt)" class="btn btn-info">ACTUALIZAR PROYECTO</button>
+<br>
+<br>
+<br>
+<br>
+</div>
+

@@ -1,0 +1,116 @@
+<h1 class="text-center">CREACIÓN DE TIEMPO OPTIMO</h1>
+
+<div class="btn-group col-xs-2" style="margin-top:2%;">
+<h5 style="color:black;">TIEMPO OPTIMO</h5>
+    <input type="text" name="top" ng-model="tiempoOptimo" placeholder="0.000" class="form-control">
+</div>
+
+<div class="btn-group col-xs-2" style="margin-top:2%;">
+<h5 style="color:black;">OPERARIOS</h5>
+    <input type="number" name="tope" ng-model="tiempoOpe" placeholder="0" class="form-control">
+</div>
+
+<div class="btn-group col-xs-2" style="margin-top:2%;">
+<h5 style="color:black;">EXTERNA</h5>
+    <input type="text" name="ext" ng-model="externa" placeholder="0" class="form-control">
+</div>
+
+<div class="btn-group col-xs-2" style="margin-top:2%;">
+<h5 style="color:black;">INTERNA</h5>
+    <input type="text" name="int" ng-model="interna" placeholder="0" class="form-control">
+</div>
+
+<div class="btn-group col-xs-2" style="margin-top:2%;">
+<h5 style="color:black;">UAP</h5>
+    <input type="text" name="uap" ng-model="uap" placeholder="0" class="form-control">
+</div>
+
+<div class="btn-group col-xs-4" style="margin-top:2%;">
+<h5 style="color:black;">PROCESO</h5>
+<select  ng-model="proceso" class="form-control" name="pro" ng-options="pro as pro.tip_proc_descripcion for pro in procesos" >
+        <option value="">--Elige opción--</option>
+</select>
+<br>
+<button ng-click="procesoNuevo()" style="border-radius: 5px 5px 5px 5px;" class="btn btn-info">{{frase}}</button>
+<br>
+<input ng-show="procesoShow" type="text" name="newProceso" ng-model="newProceso" placeholder="Escribir proceso nuevo" class="form-control">
+</div>
+
+<!-- UM -->
+<div class="btn-group col-xs-4" style="margin-top:2%;">
+<!--<h5 style="color:black;">UM</h5>
+<select  ng-model="numeroUm" class="form-control" name="pro" ng-options="id_um as id_um.id_um for id_um in ums" >
+        <option value="">Elige opción</option>
+</select>-->
+<br>
+<!--<button ng-click="umNuevo()" style="border-radius: 5px 5px 5px 5px;" class="btn btn-info">{{fraseUM}}</button>
+<br>-->
+</div>
+
+<div class="btn-group col-xs-12" ng-show="umShow" style="margin-top:2%; background-color:white;">
+<h5 style="color:black; font-size:5%;">UM</h5>
+
+<div class="btn-group col-xs-2" style="margin-top:2%;">
+<h5 style="color:black;">Nº UM</h5>
+    <input type="text" name="num_um" ng-model="num_um" placeholder="Numero UM" class="form-control">
+</div> 
+
+<div class="btn-group col-xs-3" style="margin-top:2%;">
+<h5 style="color:black;">DECRIPCION</h5>
+    <input type="text" name="um_descript" ng-model="um_descript" placeholder="Descripcion UM" class="form-control">
+</div> 
+
+<div class="btn-group col-xs-3" style="margin-top:2%;">
+<h5 style="color:black;">Nº MOLDES (si procede)</h5>
+    <input type="text" name="num_mol" ng-model="num_mol" placeholder="Numero Moldes" class="form-control">
+</div>
+<div class="btn-group col-xs-2" style="margin-top:0%;">
+<h5 style="color:black;">Es la UM principal?</h5>
+<toggle-switch
+ ng-model="switchStatus"
+ on-label="sí"
+ off-label="no">
+</toggle-switch>
+</div>
+
+<div class="btn-group col-xs-3" style="margin-top:2%;">
+<h5 style="color:black;">Tiene UM secundaria?</h5>
+<toggle-switch
+ ng-model="switchStatus2"
+ ng-change="cambio()"
+ on-label="sí"
+ off-label="no">
+</toggle-switch>
+
+<input ng-show="umSecun" type="text" name="um_secundaria" ng-model="um_secundaria" placeholder="Nº de UM Secundaria" class="form-control">
+</div> 
+<div class="btn-group col-xs-2" style="margin-top:2%;">
+    <!--<button style="border-radius: 5px 5px 5px 5px;" ng-click="crearUmNueva()" class="btn btn-info">CREAR UM</button>-->
+</div>          
+
+</div>
+
+<!-- BOTON FINALIZAR -->
+
+<div class="btn-group col-xs-12" style="margin-top:2%;">
+    <button ng-click="crearTiempoNuevo()" class="btn btn-success">CREAR TIEMPO OPTIMO</button>
+</div>
+
+<br>
+<br>
+
+<table class="table table-striped">
+	<tr>
+	   <th>ID</th>
+	   <th>Tiempo</th>
+	   <th>Operarios</th>
+	   <th>Referencia</th>
+	</tr>
+	<tr ng-repeat="tiempoOplista in listadotiempos">
+	    <td>{{tiempoOplista.id_t_optimo}}</td>
+		<td>{{tiempoOplista.t_optimo_produccion}}</td>
+		<td>{{tiempoOplista.t_optimo_operarios}}</td>
+		<td>{{tiempoOplista.t_optimo_externa}}</td>
+	</tr>
+
+</table>

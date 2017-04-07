@@ -1,0 +1,24 @@
+<h1 class="text-center">Rendimientos por operario</h1>
+
+<br>
+<br>
+
+<div class="row">
+  <div>
+  <form name="rendimientos" ng-submit="consultaRendimientos(formData)">
+    <strong>Operario</strong>
+    <select ng-model="formData.ope" name="ope" ng-options="ope as ope.Nombre for ope in NombreOperarios" >
+        <option value="">--Elige opcion--</option>
+    </select>
+    <strong>Fecha Inicio</strong>
+    <input ng-model="formData.fechaini" name="fechaini" datetime-picker date-format="yyyy-MM-dd" date-only />
+    <strong>Fecha Fin</strong>
+    <input ng-model="formData.fechafi" name="fechafi" datetime-picker date-format="yyyy-MM-dd" date-only />
+    <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i>&nbsp;&nbsp;Buscar Rendimiento</button>
+
+     </form>
+  </div>
+</div>
+
+<br>
+<br>

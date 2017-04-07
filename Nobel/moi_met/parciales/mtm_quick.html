@@ -1,0 +1,81 @@
+<h1 class = "text-center">Proyectos MTM</h1>
+
+<div class="contanier">
+	<button class="btn btn-info" ng-click="newProyect()">NUEVO PROYECTO</button>
+	<button class="btn btn-info" style="margin-left : 5%" ng-click="loadPage()">RECUPERAR PROYECTO</button>
+
+
+	<div class="col-ms-3" style="margin-top:5%;" ng-hide="mostrarNuevo">
+         <p>Nombre del proyecto</p>
+         <input class="form-control" type="text" ng-model="titulo" name="tituloProyecto">
+	</div>
+
+	<div class="col-ms-3" style="margin-top:5%;" ng-hide="mostrarNuevo">
+         <p>Unidad del proyecto</p>
+		<select class="form-control cajaPeque " ng-model="unidad" name="unidad" id="unidad">
+
+		    <option value="">--Unidad de Medida--</option>
+		    <option value="CM">CM</option>
+		    <option value="SEG">SEG</option>
+		 	<option value="D.M.H.">D.M.H.</option>
+			<option value="C.H.">C.H.</option>
+			<option value="MIN">MIN</option>
+		 </select>
+
+          <br>
+          <br>
+
+		 <button class="btn btn-info" ng-click="newMTM()">Crear Estudio Nuevo</button>
+
+	</div> 
+
+	<div class="col-ms-3" style="margin-top:5%;" ng-hide="mostrarLoad">
+          <p>Buscar proyecto</p>
+         <input class="form-control" type="text" ng-model="busqueda"/>
+
+		<br>
+		<br>
+
+		<table class="table table-bordered">
+
+			  <tr>
+			  	<th>Nombre</th>
+			  	<th>Fecha</th>
+			  	<th>Version</th>
+			  	<th>Unidad</th>
+			  	<th>Cargar</th>
+			  </tr>
+
+			  <tr ng-repeat="proyect in listaProyectos | filter:busqueda">
+			    <td>{{proyect.estudios_nombre}}</td>
+			    <td>{{proyect.estudios_fecha}}</td>
+			    <td>{{proyect.estudios_version}}</td> 
+			    <td>{{proyect.estudios_unidad}}</td>
+			    <td><button class="btn btn-info" ng-click="loadProyect(proyect.id_estudios,proyect.estudios_nombre)">Cargar</button></td>
+			  </tr>
+
+
+		</table>
+	</div>
+
+</div>
+<!--
+<video class="videogular-container" controls>
+  <source src="videos/Video 240r fuga.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' controls />
+ </video>
+
+ <video width="400" controls>
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+
+<p>
+Video courtesy of 
+<a href="http://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.
+</p>
+
+</body> 
+</html>
+
+-->

@@ -1,0 +1,86 @@
+<div class="container">
+
+
+
+<br>
+
+ <div class="inputLatera">
+
+ <select class="form-control cajaPeque " ng-change="opcion(rendimiento.opcion)" ng-model="rendimiento.opcion" name="opcion" id="opcion">
+
+    <option value="">--Elige opcion--</option>
+    <option value="1">Rdto por UAP</option>
+    <option value="2">Rdto por Operario</option>
+ 	<option value="3">Rdto por Referencia</option>
+
+ </select>
+
+
+
+ </div>
+
+
+ <div class="inputLatera">
+<!--ng-model="formData.ope" name="ope" ng-options="ope as ope.Nombre for ope in NombreOperarios"-->
+ <select  ng-show="opcion2" class="form-control cajaPeque" ng-change="codigoUAP(listadOpcion2.UAP)" ng-model="listadOpcion2.UAP" name="UAP" id="UAP" ng-options="UAP as UAP.UAP for UAP in listadOpcion2">
+
+    <option value="">--Elige opcion--</option>
+
+ </select>
+
+ <select  ng-show="opcion3" class="form-control cajaPeque" ng-change="codigoOpe(listadOpcion2.ope)" ng-model="listadOpcion2.ope" name="ope" ng-options="ope as ope.codigo for ope in listadOpcion2">
+
+    <option value="">--Elige opcion--</option>
+
+ </select>
+<select  ng-show="opcion4" class="form-control cajaPeque" ng-change="codigoRef(listadOpcion2.ref)" ng-model="listadOpcion2.ref" name="ref" ng-options="ref as ref.ref_externa for ref in listadOpcion2">
+
+    <option value="">--Elige opcion--</option>
+
+ </select>
+
+</div>
+
+<div class="cabeceraLateral">
+
+
+<h1 ng-show="cabecera" class="text-center">Rendimientos de {{ren}}</h1>
+
+
+</div>
+
+<br>
+
+<br>
+
+<div class="cajaPeque2">
+<strong ng-show="cabecerafecha" class="cajaPeque">Fecha Inicio</strong>
+
+<input ng-model="fechaini" ng-show="cabecerafecha" name="fechaini" class="form-control cajaPeque" datetime-picker date-format="yyyy-MM-dd" date-only />
+</div>
+
+<br>
+
+<div class="cajaPeque2">
+
+<strong ng-show="cabecerafecha" class="cajaPeque">Fecha Fin</strong>
+
+<input ng-model="fechafi" ng-show="cabecerafecha" name="fechafi" class="form-control cajaPeque" datetime-picker date-format="yyyy-MM-dd" date-only />
+</div>
+
+<br>
+<div class="cajaPeque2">
+<button ng-show="cabecera" class="btn btn-primary" type="button" ng-click="ejecutarBusqueda()">Ejecutar Busqueda</button>
+</div>
+<br>
+<div ng-show="cabecera" class="tabla">
+
+<label class="label label-primary login" ng-show="cargando">Cargando Datos Por Favor Espere..........</label>
+
+</div>
+<div id="RendimientoChart" style="height: 350px; width: 1100px;"></div>
+
+
+
+
+</div>

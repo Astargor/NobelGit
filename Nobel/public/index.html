@@ -1,0 +1,92 @@
+<?php
+    
+    session_start();
+    unset( $_SESSION['user']);
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <title>Nobel Login</title>
+
+        <!-- Incluir Bootstrap -->
+        <link rel="stylesheet" href="angular/lib/bootstrap.min.css">
+
+        <!-- animate -->
+        <link rel="stylesheet" href="angular/lib/animate.css">
+
+        <!-- Estilo personalizado -->
+        <link rel="stylesheet" href="angular/lib/style.css">
+
+        <!-- CSS para normalizar la web -->
+        <link rel="stylesheet" href="font/css/font-awesome.min.css">
+        <link rel="stylesheet" href="angular/lib/normalize.css">
+        
+        <!-- Incluir AngularJS -->
+        <script src="angular/lib/angular.min.js"></script>
+        <script src="angular/lib/angular-touch.min.js"></script>
+
+        <script src="angular/lib/angular-route.min.js"></script>
+
+        <script src="angular/app.js"></script>
+
+        <script src="angular/servicios/login_service.js"></script>
+        
+    </head>    
+<body ng-app="loginApp" ng-controller="mainCtrl">
+
+   <div class="row">
+      <div class="col-xs-4 fondo">
+      
+         <div class="logincss">
+         <form name="forma" ng-submit="ingresar(datos)">
+         <p class="centrarTexto">LOGIN</p>
+         <br>
+         <input type="text" required="required" ng-model="datos.usuario" class="form-control"  ng-show="semaforo" placeholder="Usuario"></input>
+         <br>
+         <input type="password" required="required" ng-model="datos.pass" class="form-control"  ng-show="semaforo" placeholder="Password"></input>
+         <br>
+         <button type="submit" ng-disabled="forma.$invalid || cargando"  ng-show="semaforo" class="btn btn-primary btn-block btn-flat"><i class="fa fa-sign-in"></i>&nbsp;&nbsp;Entrar</button>
+         <br>
+         <br>
+         </form>
+
+         <form ng-submit="abrirUsuario()">
+         <button  class="btn btn-warning btn-block btn-flat"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;Nuevo Usuario</button>
+         <br>
+         </form>
+
+         <form ng-submit="guardarUsuario()">
+         <input type="text" ng-model="usuarios.usuario" class="form-control animated bounceInRight"  ng-show="semaforo2" placeholder="Usuario"></input>
+         <br>
+         <input type="password" ng-model="usuarios.pass" class="form-control animated bounceInRight"  ng-show="semaforo2" placeholder="Password"></input>
+         <br>
+         <button type="submit" ng-disabled="false"  ng-show="semaforo2" class="btn btn-danger btn-block btn-flat animated bounceInRight">Registrar</button>
+         <br>
+         </form>
+
+         <br>
+         <br>
+        <!--<a  ng-show="semaforo" href="">Has olvidado la contraseña?</a>-->
+         
+         </div>
+         <div class="mesaje row" ng-show="invalido">
+            <div class="col-md-12">
+            <br>
+               <div class="alert alert-danger">
+                   <strong>{{mensaje}}</strong>
+
+
+               </div>
+            </div>
+          </div>
+         
+             
+      </div>
+      
+   </div>
+
+</body>
+</html>

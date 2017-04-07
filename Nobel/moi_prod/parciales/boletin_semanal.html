@@ -1,0 +1,71 @@
+<div class="container">
+ <div class="col-md-10">
+	<div class="cabecera">
+		<h1 class = "text-center"> BOLETIN SEMANAL </h1>
+		<label class="label label-primary login" ng-show="cargando">Cargando Boletín Espere..........</label>
+	</div>
+<br>
+<div class="flotante_derecha2">
+	<form ng-submit="anadirDia(boletin)">
+		<div>
+			<strong>Tipo de Día</strong>
+			<select  name="coste" id="coste" required="true" ng-model="boletin.coste" class="form-control">
+			    <option value="">-Selecciona-</option>
+			    <option value="016">Trabajado</option>
+			    <option value="041">Libre Disposición</option>
+			    <option value="042">Ausencia</option>
+			    <option value="048">Festivo</option>
+			</select>
+		
+		</div>
+	<br>
+		<div>
+			<strong>Turno</strong>
+			<select  name="turno" id="turno" required="true" ng-model="boletin.turno" class="form-control">
+			    <option value="">-Selecciona-</option>
+			    <option value="Mañana">Mañana</option>
+			    <option value="Tarde">Tarde</option>
+			    <option value="Noche">Noche</option>
+			</select>
+		
+		</div>
+	<br>
+		<div>
+
+		<strong>Fecha</strong>
+		<input class="form-control" ng-model="boletin.dia" name="fechaini" datetime-picker date-format="yyyy-MM-dd" date-only />
+
+	<br>
+		<button type="submit" class="btn btn-info">Añadir Día</button>
+
+		</div>
+
+	</form>
+
+	</div>
+<div class="flotante_derecha3">
+
+	<table class="table table-striped">
+		  <tr>
+
+		  	<th>DIAS DEL BOLETIN</th>
+		  	<th>BORRAR DÍA</th>
+		  	
+
+		  </tr>
+		  <tr ng-repeat="diasTrabajados in listaDias">
+
+		    
+		    <td>{{diasTrabajados.dia}}</td>
+		    <td><button class="btn btn-danger" ng-click="borrarDia($index)">Borrar</button></td>
+
+		  	
+		  </tr>
+	</table>
+    <br>
+	<button class="btn btn-success" ng-click="terminarBoletin()">TERMINAR BOLETÍN</button>
+
+</div>
+ 
+
+</div>	

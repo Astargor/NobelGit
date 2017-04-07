@@ -1,0 +1,48 @@
+body{
+  border: solid 1px;
+	background: url("http://lorempixel.com/1280/800/abstract/") 50% fixed;  
+	background-size: cover;
+	height: 100vh;
+
+ -webkit-border: solid 1px;
+ -webkit-background: url("http://lorempixel.com/1280/800/abstract/") 50% fixed;  
+ -webkit-background-size: cover;
+ -webkit-height: 100vh;
+	
+}
+* {
+  box-sizing: border-box;
+}
+.logincss{
+  border: solid 1px;
+  padding: 20px;
+  background: white;
+  margin-top: 30%;
+  margin-left: 110%;
+  height: 400px;
+  width: 400px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius:15px 15px 15px 15px;
+
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+  background: rgba(4, 40, 68, 0.85);
+}
+.centrarTexto{
+	text-align: center;
+	font-size: 250%;
+	font-family: cursive;
+}
+.mesaje{
+	margin-left: 110%;
+	width: 400px;
+}

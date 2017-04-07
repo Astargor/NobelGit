@@ -1,0 +1,26 @@
+<h1 class="text-center">SELECCIÓN DE REFERENCIA</h1>
+	<h3>Filtro de búsqueda</h3>
+
+	<input type="text" class="form-control" ng-model="busqueda"/>
+	<br>
+	<br>
+	<table class="table table-striped">
+	    <tr>
+			<th>Referencias</th>
+			<th>Tipo de Proceso</th>
+		  	<th>Operarios</th>
+		  	<th>Tiempo</th>
+		  	<th>Piezas/Hora</th>
+		  	<th>Seleccionar</th>
+        </tr>
+        
+        <tr ng-repeat = "refe in listaReferenciasCompleta | filter : busqueda">
+		    <td>{{refe.t_optimo_externa}}</td>
+		    <td>{{refe.tip_proc_descripcion}}</td>
+		    <td>{{refe.t_optimo_operarios}}</td>
+		    <td>{{refe.t_optimo_produccion}}</td>
+		    <td>{{refe.PH}}</td>
+		    <td><button class="btn btn-primary" ng-click="selecRef(refe)">SELECCIONAR</button></td>
+		</tr>
+        
+	</table>

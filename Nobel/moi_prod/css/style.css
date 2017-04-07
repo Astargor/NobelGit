@@ -1,0 +1,482 @@
+
+/*
+  ---------------------------------------------
+  --  CSS GENERALES                          --
+  ---------------------------------------------
+  */
+/*
+-----------------------------------------------
+--  Color de fondo de las pantallas          --
+-----------------------------------------------
+*/
+  .login{
+    padding: 1%; 
+    font-size: 250%;
+  }
+  .tabla{
+    margin-top: 5%;
+  }
+ .cabecera{
+  margin-top: 1%;
+  background-color: #D8D8D8;
+  padding: 2%;
+  border-radius: 10px 10px 10px 10px;
+
+
+}
+.cabeceraLateral{
+  background-color: gray;
+   float: left;
+   width: 60%;
+   margin-left: 2%;
+   border-radius: 10px 10px 10px 10px;
+
+}
+.tall{
+
+  width: 20%;
+}
+.pad{
+  margin: 1%;
+  padding: 2%;
+  width: 25%;
+  color: white;
+  background-color: #1C1C1C;
+} 
+.app-modal-window .modal-dialog {
+  width: 100%;
+  height: 100%;
+}
+  .fondoTabla{
+    background-color: white;
+  }
+  .fondoTablaV{
+    background-color: #01DF01;
+    color:white;
+  }
+  .modalColor{
+    
+   -webkit-border-radius: 10px 10px 10px 10px;
+    -webkit-float: left;
+    -webkit-width: 50%;
+    -webkit-height: 50%;
+    -webkit-background-color: #6E6E6E;
+    -webkit-color:white;
+    border-radius: 10px 10px 10px 10px;
+    float: left;
+    width: 50%;
+    height: 50%;
+    background-color: #6E6E6E;
+    color:white;
+    
+  }
+  .dividido{
+    border-radius: 10px 10px 10px 10px;
+    float: left;
+    width: 30%;
+    height: 50%;
+    background-color: #01DF01;
+    color:white;
+
+  }
+    .dividido2{
+    padding: 5%; 
+    float: left;
+    width: 30%;
+    height: 50%;
+
+  }
+  .textoVerde{
+    color:green;
+    font-size: 150%;
+  }
+  .graficos{
+    float: left;
+  }
+  .graficos3{
+    float: right;
+  }
+  .graficos2{
+    float: left;
+    height: 450%;
+    padding: 1%;
+
+  }
+  .selectpicker{
+    /*style: 'btn-info';*/
+    font-size: 150%;
+  }
+  .textoal20{
+    font-size: 150%;
+  }
+
+  .probarBorde{
+
+   border: solid 1px;
+
+  }
+  .probarBorde2{
+
+   border: solid 1px;
+   float: left;
+  }
+
+  .inputLatera{
+   
+   float: left;
+   width: 200px;
+   margin-left: 1%;
+
+  }
+
+  .botonPersonalizado{
+    display: block;
+    padding: 2%;
+    border: solid 2px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #585858;
+    color: white;
+    width: 30%;
+  }
+  .botonPersonalizado:hover{
+   background-color: white;
+    color: black;
+
+  }
+  .cajaPeque{
+    width: 200px;
+   
+  }
+  .cajaPeque2{
+    margin-top: 0;
+    margin-left: 2%;
+    width: 200px;
+    float:left;
+
+  }
+/*
+-----------------------------------------------
+--  Color de fondo de las pantallas          --
+-----------------------------------------------
+*/
+.fondoPantalla{
+  background-color: #D8D8D8;
+ 
+}
+/* CSS PARA BORDE CON SOMBRA */
+
+.cabeceraHome,.nobel,.imgPeque,.cabecera{
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.desplaIzq{
+  margin-left: 2%;
+}
+.desplaDer{
+  margin-right: 10%;
+}
+
+.boton{
+
+  width: 50%;
+  height: 10%;
+
+}
+/*
+-----------------------------------------------
+---      FIN CSS GENERALES                  ---
+-----------------------------------------------
+*/
+.bordePintado{
+
+border:solid 1px;
+
+}
+
+.borde{
+  
+  margin-top: 2%;
+}
+body {
+  padding-top: 50px;
+}
+
+.textoblanco{
+  color:white;
+}
+
+.cabeceraHome{
+
+     text-align: center;
+     border:solid 1px;
+     border-radius:15px 15px 15px 15px;
+}
+
+.nobel{
+
+-webkit-width: 70%;
+-webkit-height: 70%;
+-webkit-margin-left: 10%;
+-webkit-margin-top: 5%;
+
+width: 70%;
+height: 70%;
+margin-left: 10%;
+margin-top: 5%;
+
+  border-radius:15px 15px 15px 15px;
+}
+
+
+.imgPeque{
+-webkit-width: 100px;
+-webkit-height: 100px;
+  
+width: 100px;
+height: 100px;
+
+}
+/*--------------------------*/
+.borde{
+  border:1px solid;
+}
+
+.cabecera{
+  margin-top: 1%;
+  background-color: #D8D8D8;
+  padding: 2%;
+  border-radius: 10px 10px 10px 10px;
+
+
+}
+.inputMediano{
+  width: 20%;
+}
+.modalColor{
+    
+   -webkit-border-radius: 10px 10px 10px 10px;
+    -webkit-float: left;
+    -webkit-width: 50%;
+    -webkit-height: 50%;
+    -webkit-background-color: #6E6E6E;
+    -webkit-color:white;
+    border-radius: 10px 10px 10px 10px;
+    float: left;
+    width: 50%;
+    height: 50%;
+    background-color: #6E6E6E;
+    color:white;
+    
+  }
+.textoVerde{
+    color:green;
+    font-size: 150%;
+  }
+.fondoPantalla{
+  background-color: #D8D8D8;
+ 
+}
+/* CSS PARA BORDE CON SOMBRA */
+
+.cabeceraHome,.nobel,.imgPeque,.cabecera{
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.desplaIzq{
+  margin-left: 2%;
+}
+.pad{
+  margin: 1%;
+  padding: 2%;
+  width: 25%;
+  
+}
+
+.flotante_derechaTabla{
+
+  width: 5%;
+}
+.tablaCentral{
+  
+  width: 80%;
+  margin-left: -8%;
+
+}
+.flotante_derecha{
+  float: left;
+  width: 10%;
+}
+.flotante_derecha2{
+  float: left;
+  width: 20%;
+
+}
+.flotante_derecha3{
+  padding-left: 5%;
+  float: left;
+  width: 50%;
+
+}
+.textoMediano{
+  font-size: 200%;
+  color:red;
+}
+
+/*
+-----------------------------------------------
+---      FIN CSS GENERALES                  ---
+-----------------------------------------------
+*/
+.borde{
+  
+  margin-top: 2%;
+}
+body {
+  padding-top: 50px;
+}
+
+.cabeceraHome{
+
+	   text-align: center;
+	   border:solid 1px;
+     border-radius:15px 15px 15px 15px;
+}
+
+.nobel{
+
+-webkit-width: 70%;
+-webkit-height: 70%;
+-webkit-margin-left: 10%;
+-webkit-margin-top: 5%;
+
+width: 70%;
+height: 70%;
+margin-left: 10%;
+margin-top: 5%;
+
+  border-radius:15px 15px 15px 15px;
+}
+
+
+.imgPeque{
+-webkit-width: 100px;
+-webkit-height: 100px;
+  
+width: 100px;
+height: 100px;
+
+}
+.graficos{
+  float: left;
+  }
+  .graficos3{
+    float: right;
+  }
+  .graficos2{
+    float: left;
+    height: 450%;
+    padding: 1%;
+
+
+  }
+
+  .cabeceraLateral{
+  background-color: gray;
+   float: left;
+   width: 60%;
+   margin-left: 2%;
+   border-radius: 10px 10px 10px 10px;
+
+}
+
+ .cajaPeque{
+    width: 200px;
+   
+  }
+  .cajaPeque2{
+    margin-top: 0;
+    margin-left: 2%;
+    width: 200px;
+    float:left;
+
+  }
+/*
+
+-----------------------------------------------
+--CSS para el color de la barra de navegación--
+-----------------------------------------------
+*/
+.navbar-default {
+  background-color: #3c89e7;
+  border-color: #3ec02b;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #efefef;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #efefef;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #efefef;
+  background-color: #3ec02b;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #efefef;
+  background-color: #3ec02b;
+}
+.navbar-default .navbar-toggle {
+  border-color: #3ec02b;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #3ec02b;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #efefef;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #efefef;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #efefef;
+    background-color: #3ec02b;
+  }
+}
+

@@ -1,0 +1,63 @@
+<h1 class="text-center">Rendimientos</h1>
+<br>
+
+<br>
+
+<div class="row">
+  <div>
+  <form name="rendimientos" ng-submit="consularRendimiento(formData)">
+    <strong>Referencia</strong>
+    <select class="form-control tall" ng-model="formData.refe" name="refe" ng-options="refe as refe.ref_externa for refe in listaReferencias" >
+        <option value="">--Elige opcion--</option>
+    </select>
+    <br>
+    <br>
+    <strong>Fecha Inicio</strong>
+    <input ng-model="formData.fechaini" name="fechaini" datetime-picker date-format="yyyy-MM-dd" date-only />
+    <strong>Fecha Fin</strong>
+    <input ng-model="formData.fechafi" name="fechafi" datetime-picker date-format="yyyy-MM-dd" date-only />
+     <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i>&nbsp;&nbsp;Buscar Referencia</button>
+
+     </form>
+  </div>
+</div>
+<br>
+<br>
+<div >
+<div class="graficos" ng-show="ocultar" id="RendimientoChart" style="height: 250px; width: 500px;"></div>
+
+<div class="graficos" ng-show="ocultar" id="RendimientoChart32" style="height: 250px; width: 500px; "></div>
+</div>
+<br>
+<input class="form-control" type="text" ng-model="busqueda" placeholder="BUSQUEDA" />
+<br>
+
+<table class="table table-striped">
+	<tr>
+	   <th>Fecha</th>
+	   <th>Operario</th>
+	   <th>Horas</th>
+	   <th>Coste</th>
+	   <th>Piezas</th>
+	   <th>Nº Operarios</th>
+	   <th>Rendimientos</th>
+	</tr>
+	<tr ng-repeat="rendimiento in listadoRendimiento | filter:busqueda">
+		<td>{{rendimiento.Fecha}}</td>
+		<td>{{rendimiento.Operario}}</td>
+		<td>{{rendimiento.Horas}}</td>
+		<td>{{rendimiento.C_Coste}}</td>
+		<td>{{rendimiento.Piezas}}</td>
+		<td>{{rendimiento.OPE_TIRM}}</td>
+		<td>{{rendimiento.Rendimentos}}</td>
+
+	</tr>
+
+
+
+
+</table>
+
+
+
+<br>

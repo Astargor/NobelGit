@@ -1,0 +1,34 @@
+<div class="modalCheck">
+
+ <form name = "checklist" ng-submit="registrarCheck(check)">
+	<h1  class = "text-center">CHECK LIST</h1>
+	<input type="number" class="form-control" ng-model="check.operario" placeholder="Numero de Operario"></input>
+	<BR>
+	<BR>
+	TRAZABILIDAD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<toggle-switch ng-model="check.switchStatus1" class="switch-success" on-label="OK" off-label="NOK"></toggle-switch>
+	<BR>
+	<BR>
+	REVISION DEL METODO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<toggle-switch ng-model="check.switchStatus2" class="switch-success" on-label="OK" off-label="NOK"></toggle-switch>
+	<BR>
+	<BR>
+	SEGURIDAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<toggle-switch ng-model="check.switchStatus3" class="switch-success" on-label="OK" off-label="NOK"></toggle-switch>
+	<BR>
+	<BR>
+	CONTROL DE POKA-YOKES&nbsp;&nbsp;&nbsp;&nbsp;<toggle-switch ng-model="check.switchStatus4" class="switch-success" on-label="OK" off-label="NOK"></toggle-switch>
+	<BR>
+	<BR>
+	AUTOCONTROL DE INICIO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<toggle-switch ng-model="check.switchStatus5" class="switch-success" on-label="OK" off-label="NOK"></toggle-switch>
+	<BR>
+	<BR>
+	AUTOCONTROL +4 HORAS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<toggle-switch ng-model="check.switchStatus6" class="switch-success" on-label="OK" off-label="NOK"></toggle-switch>
+	<BR>
+	<BR>
+	AVERIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<toggle-switch ng-model="check.switchStatus7" class="switch-danger" on-label="OK" off-label="NOK"></toggle-switch>
+	<BR>
+	<BR>
+	OBSERVACIONES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="form-control" ng-model="check.observacion" placeholder="Observaciones"></input>
+	<BR>
+	<BR>
+	<button type="submit" class="btn btn-info">REGISTRAR</button>
+ </form>	
+</div>

@@ -1,0 +1,81 @@
+<div class="container">
+ <div class="col-md-10">
+	<div class="cabecera animated bounceInDown">
+		<h1 class = "text-center"> VALIDAR BOLETINES </h1>
+	</div>
+
+	<br>
+	<br>
+
+	<div>
+		<form form name="Turno" ng-submit="traerBoletinesTurno(formData)"> 
+		 	<select multiple ng-multiple="true" class="flotante_derecha form-control" ng-model="formData.turno" name="turno" >
+		        <option value="Mañana">Mañana</option>
+		        <option value="Tarde">Tarde</option>
+		        <option value="Noche">Noche</option>
+	    	</select>&nbsp;&nbsp;&nbsp;&nbsp;
+	    	<button type="submit" class="btn btn-info">BUSCAR BOLETINES</button>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Cantidad De Boletines Pendientes:  </strong><strong class="textoMediano animated shake">{{totalBole}}</strong>
+             
+	    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="textoVerde animated {{animacion}}">{{mensaje2}}</strong>
+            
+	    </form>
+
+	</div>
+ </div>	
+
+	<div class="col-xs-3">
+	   <table class="flotante_derechaTabla table table-bordered">
+	    <tr>
+
+	   		<th>Operarios</th>
+	   		<th>Ver</th>
+
+	   	</tr>	
+	   	<tr ng-repeat="ope in pendientes">
+
+	   		<td>{{ope.bol_operario}}</td>
+	   		<td> <button type="button" class="btn btn-danger" ng-click="traerBoletin(ope.bol_operario)"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;VER</button></td>
+
+	   	</tr>
+	   </table>
+
+	</div>
+	<div class="tablaCentral col-lg-9">
+	    <strong>NOMBRE: {{nombreOp}}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Cantidad de Horas: {{totalHoras()}}</strong>
+         <table class="table table-bordered">
+	    <tr> 
+	        <th>ID</th>
+            <th>Fecha</th>
+	   		<th>Horas</th>
+	   		<th>C_Coste</th>
+	   		<th>Descripción</th>
+	   		<th>Referencia</th>
+	   		<th>Piezas</th>
+	   		<th>Tiempo</th>
+	   		<th>Rendimientos</th>
+	   		<th>Modificar</th>
+
+	   	</tr>	
+	   	<tr ng-repeat="bolope in boletin">
+	   	    <td>{{bolope.ID}}</td>
+            <td>{{bolope.Fecha | date:"dd/MM/yyyy"}}</td>
+	   		<td>{{bolope.Horas}}</td>
+	   		<td>{{bolope.C_Coste}}</td>
+	   		<td>{{bolope.Descripcion}}</td>
+	   		<td>{{bolope.Referencia}}</td>
+	   		<td>{{bolope.Piezas}}</td>
+	   		<td>{{bolope.Tiempo}}</td>
+	   		<td ng-if="bolope.Rendimentos > 106" style="background-color: #DF0101;color: white;">{{bolope.Rendimentos}}</td>
+	  	    <td ng-if="bolope.Rendimentos >= 96 == bolope.Rendimentos <= 105" style="background-color: #A9F5A9;">{{bolope.Rendimentos}}</td>
+	        <td ng-if="bolope.Rendimentos <= 90 == bolope.Rendimentos >= 95" style="background-color: yellow;">{{bolope.Rendimentos}}</td>
+	        <td ng-if="bolope.Rendimentos <= 89 == bolope.Rendimentos >= 85" style="background-color: #DF0101;color: white;">{{bolope.Rendimentos}}</td>
+	        <td ng-if="bolope.Rendimentos <= 84 == bolope.Rendimentos >= 72" style="background-color: #848484;">{{bolope.Rendimentos}}</td>
+	        <td ng-if="bolope.Rendimentos < 71 == bolope.Rendimentos >= 1" style="background-color: #151515;color: white;">{{bolope.Rendimentos}}</td>
+	        <td ng-if="bolope.Rendimentos == 0" style="background-color: white;">{{bolope.Rendimentos}}</td>
+		   		<td><button type="button" class="btn btn-warning" ng-click="Mofidicar(bolope.ID)"><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Modificar</button></td>
+	   		
+	   	</tr>
+	   </table>
+	   <button class="btn btn-info" ng-click="validarBoletin()"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Boletín/es  Correcto/s</button>
+	</div>
+</div>	

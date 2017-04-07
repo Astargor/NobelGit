@@ -1,0 +1,44 @@
+<div class="modalCheck">
+
+ <form name = "checklist" ng-submit="registrarCheck(check)">
+	<h1  class = "text-center">CHECK LIST LIDER</h1>
+	<strong>NÚMERO DE LIDER</strong>
+	<input type="number" class="form-control" ng-model="check.operario" placeholder="Numero de Lider"></input>
+	<BR>
+	<BR>
+	<strong>PASSWORD</strong>
+	<input type="password" class="form-control" ng-model="check.password" placeholder="Password"></input>
+	<BR>
+	<BR>
+	<button type="submit" class="btn btn-info">REGISTRAR</button>
+
+ </form>
+
+<hr>
+	<table class="table" ng-show="ocultarCheck">
+	    <tr>
+			<th>OPERARIO</th>
+			<th>TRAZABILIDAD</th>
+		  	<th>METODO</th>
+		  	<th>SEGURIDAD</th>
+		  	<th>POKA-YOKES</th>
+		  	<th>AUTOCONTROL</th>
+
+        </tr>       
+        <tr ng-repeat="check in checkList">
+		    <td>{{check.check_list_operario}}</td>
+		    <td>{{check.check_list_trazabilidad}}</td>
+		    <td>{{check.check_list_revision_metodo}}</td>
+		    <td>{{check.check_list_seguridad}}</td>
+		    <td>{{check.check_list_poka_yoke}}</td>
+		    <td>{{check.check_list_auto_inicio}}</td>
+
+		</tr>
+        
+	</table>
+
+</hr>
+
+<button ng-show="ocultarCheck" type="button" class="btn btn-info" ng-click="validar()">VALIDAR CHECKLIST</button>
+
+</div>
